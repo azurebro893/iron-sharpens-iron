@@ -1,9 +1,8 @@
 const affirmations = [
-    { s: "Proverbs 27:17", a: "Iron sharpens iron, and one man sharpens another. I will seek godly brotherhood today." },
-    { s: "Joshua 1:9", a: "I am strong and courageous. I will not be afraid, for the Lord is with me." },
-    { s: "1 Corinthians 16:13", a: "I will stand firm in the faith, act like a man, and be strong." },
-    { s: "Psalm 119:9", a: "I keep my way pure by living according to God's Word." },
-    { s: "2 Timothy 1:7", a: "God has not given me a spirit of fear, but of power, love, and a sound mind." }
+    { s: "Proverbs 27:17", a: "Iron sharpens iron, and one man sharpens another." },
+    { s: "Joshua 1:9", a: "Be strong and courageous. Do not be afraid; the Lord your God is with you." },
+    { s: "Psalm 133:1", a: "How good and pleasant it is when God’s people live together in unity!" },
+    { s: "1 Peter 2:17", a: "Show proper respect to everyone, love the family of believers." }
 ];
 
 function updateDateTime() {
@@ -13,7 +12,9 @@ function updateDateTime() {
 }
 
 document.getElementById('affirmation-btn').addEventListener('click', () => {
-    console.log("Button clicked!"); // This helps debug
+    // Hide meeting info to show affirmation clearly
+    document.getElementById('meeting-info').style.display = 'none';
+    
     const random = affirmations[Math.floor(Math.random() * affirmations.length)];
     document.getElementById('scripture').innerText = random.s;
     document.getElementById('affirmation').innerText = random.a;

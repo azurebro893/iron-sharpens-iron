@@ -1,17 +1,16 @@
 :root {
     --gold: #d4af37;
-    --dark-bg: #1a1a1a;
+    --dark-bg: #121212;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #000; /* Deep black background for the website */
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #000;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: white;
 }
 
-/* Centers the app on a desktop website */
 .web-wrapper {
     display: flex;
     justify-content: center;
@@ -22,37 +21,38 @@ body {
 
 .app-container {
     width: 100%;
-    max-width: 450px; /* Limits width on desktop */
-    height: 850px;
+    max-width: 450px;
+    height: 900px;
     max-height: 95vh;
     background: var(--dark-bg);
-    border: 2px solid var(--gold);
-    border-radius: 20px;
+    border: 1px solid var(--gold);
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
 }
 
 header {
     padding: 20px;
     text-align: center;
-    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 header h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--gold);
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
-#date-display { font-size: 1.2rem; margin-top: 5px; }
+#date-display { font-size: 1.2rem; margin-top: 5px; font-weight: bold; }
 #time-display { font-size: 1rem; opacity: 0.7; }
 
+/* Expanded image area to see more of the picture */
 .image-display {
     width: 100%;
-    height: 250px;
+    height: 350px; 
     overflow: hidden;
     border-bottom: 1px solid var(--gold);
 }
@@ -60,36 +60,27 @@ header h1 {
 #main-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops the flyer to show the men in the circle */
-    object-position: center top;
+    object-fit: cover;
+    object-position: center 20%; /* Adjusted to keep the men's faces centered */
 }
 
 #display-area {
     flex: 1;
-    padding: 30px;
+    padding: 25px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#scripture {
-    color: var(--gold);
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
+#meeting-info h3 { color: var(--gold); margin-bottom: 5px; letter-spacing: 1px; }
+#meeting-info p { margin: 5px 0; font-size: 1.1rem; }
+.address { font-size: 0.9rem !important; opacity: 0.8; margin-top: 10px !important; }
 
-#affirmation {
-    font-style: italic;
-    line-height: 1.6;
-    font-size: 1.1rem;
-}
+#scripture { color: var(--gold); font-weight: bold; font-size: 1.2rem; margin-top: 15px; }
+#affirmation { font-style: italic; line-height: 1.5; font-size: 1.1rem; margin-top: 10px; }
 
-footer {
-    padding: 30px;
-    text-align: center;
-}
+footer { padding: 25px; }
 
 #affirmation-btn {
     width: 100%;
@@ -99,23 +90,14 @@ footer {
     padding: 18px;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-#affirmation-btn:hover {
-    background: #f1c40f;
-    transform: translateY(-2px);
-}
-
-/* Mobile Adjustments */
+/* Mobile full-screen mode */
 @media (max-width: 480px) {
     .web-wrapper { padding: 0; }
-    .app-container {
-        height: 100vh;
-        max-height: 100vh;
-        border-radius: 0;
-        border: none;
-    }
+    .app-container { height: 100vh; max-height: 100vh; border-radius: 0; border: none; }
+    .image-display { height: 40vh; } /* Dynamic height for mobile */
 }
