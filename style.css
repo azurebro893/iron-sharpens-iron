@@ -1,108 +1,121 @@
+:root {
+    --gold: #d4af37;
+    --dark-bg: #1a1a1a;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-    background: #000 url('clean-background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-color: #000; /* Deep black background for the website */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: white;
+}
+
+/* Centers the app on a desktop website */
+.web-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .app-container {
-    width: 90%;
-    max-width: 420px;
-    height: 90vh; /* Set app height within the frame */
-    border: 2px solid #d4af37; /* Thin gold border */
-    border-radius: 30px;
-    background: rgba(0, 0, 0, 0.75); /* Slight transparency */
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); /* Glowing effect */
+    width: 100%;
+    max-width: 450px; /* Limits width on desktop */
+    height: 850px;
+    max-height: 95vh;
+    background: var(--dark-bg);
+    border: 2px solid var(--gold);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    justify-content: space-between;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-/* Header (Date and Time) */
 header {
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
+    background: rgba(0,0,0,0.3);
 }
 
-#date-display {
-    font-size: 2rem;
-    color: #d4af37; /* Gold */
-    margin: 0 0 5px 0;
-    font-weight: bold;
-}
-
-#time-display {
+header h1 {
     font-size: 1.5rem;
+    color: var(--gold);
     margin: 0;
-    opacity: 0.8;
+    letter-spacing: 2px;
 }
 
-/* Main Affirmation Area (Middle) */
-main {
-    flex-grow: 1; /* Pushes the affirmation into the remaining space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0;
+#date-display { font-size: 1.2rem; margin-top: 5px; }
+#time-display { font-size: 1rem; opacity: 0.7; }
+
+.image-display {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gold);
+}
+
+#main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the flyer to show the men in the circle */
+    object-position: center top;
 }
 
 #display-area {
-    width: 90%;
-    min-height: 150px;
+    flex: 1;
+    padding: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #scripture {
-    font-size: 1.2rem;
+    color: var(--gold);
     font-weight: bold;
-    color: #d4af37;
+    font-size: 1.2rem;
     margin-bottom: 15px;
-    opacity: 0; /* Starts invisible until button click */
-    transition: opacity 0.5s ease-in-out;
 }
 
 #affirmation {
-    font-size: 1rem;
     font-style: italic;
     line-height: 1.6;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    font-size: 1.1rem;
 }
 
-/* Show content with animation */
-.show #scripture, .show #affirmation {
-    opacity: 1;
-}
-
-/* Footer (Button) */
 footer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+    padding: 30px;
+    text-align: center;
 }
 
 #affirmation-btn {
-    background: #d4af37; /* Gold */
+    width: 100%;
+    background: var(--gold);
     color: black;
     border: none;
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    padding: 18px;
+    font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 50px; /* Fully rounded */
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-    transition: all 0.2s;
+    transition: 0.3s;
 }
 
-#affirmation-btn:active {
-    transform: scale(0.95); /* Click feedback */
-    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+#affirmation-btn:hover {
+    background: #f1c40f;
+    transform: translateY(-2px);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .web-wrapper { padding: 0; }
+    .app-container {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        border: none;
+    }
 }

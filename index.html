@@ -8,22 +8,29 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1 id="date-display"></h1>
-            <h2 id="time-display"></h2>
-        </header>
+    <div class="web-wrapper">
+        <div class="app-container">
+            <header>
+                <h1>IRON SHARPENS IRON</h1>
+                <div id="date-display"></div>
+                <div id="time-display"></div>
+            </header>
 
-        <main>
-            <div id="display-area">
-                <p id="scripture"></p>
-                <p id="affirmation"></p>
-            </div>
-        </main>
+            <main>
+                <div class="image-display">
+                    <img src="background.jpg" alt="Brotherhood" id="main-img">
+                </div>
 
-        <footer>
-            <button id="affirmation-btn">Get Daily Affirmation</button>
-        </footer>
+                <div id="display-area">
+                    <p id="scripture">Click below for the Word</p>
+                    <p id="affirmation"></p>
+                </div>
+            </main>
+
+            <footer>
+                <button id="affirmation-btn">Get Daily Affirmation</button>
+            </footer>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
